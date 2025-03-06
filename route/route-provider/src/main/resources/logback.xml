@@ -1,0 +1,31 @@
+<configuration>
+    <appender name="JITTER_APP" class="ch.qos.logback.core.FileAppender">
+        <file>./log/JITTER.log</file>
+        <append>true</append>
+        <encoder>
+<!--            <pattern>%date %level [%thread] %logger{10} [%file:%line] - %msg%n</pattern>-->
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="JITTER_APP_SSR" class="ch.qos.logback.core.FileAppender">
+        <file>./log/JITTER9.log</file>
+        <append>true</append>
+        <encoder>
+<!--            <pattern>%date %level [%thread] %logger{10} [%file:%line] - %msg%n</pattern>-->
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.pml.JitterApplication2" level="INFO">
+        <appender-ref ref="JITTER_APP"/>
+    </logger>
+
+    <logger name="com.pml.JitterApplication3" level="INFO">
+        <appender-ref ref="JITTER_APP_SSR"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
